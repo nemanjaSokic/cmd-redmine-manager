@@ -13,8 +13,9 @@ func main() {
 	//Commandline utility za Redmine
 
 	username, password, error := auth.Credentials()
-    if error != nil{
-        panic(error)
-    }
-    fmt.Printf("You are logged in as %v/%v\n",username,password)
+	if error != nil {
+		panic(error)
+	}
+	fmt.Printf("You are logged in as %v/%v\n", username, password)
+
 }
