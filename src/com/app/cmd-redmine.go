@@ -536,7 +536,11 @@ func notesFromEditor(issue *redmine.Issue) (string, error) {
 	return text, nil
 }
 func SelectProject() int {
-	fmt.Printf("Called test!\n")
+	projects, err := Client.Projects()
+	if err != nil {
+		fatal("Failed to list projects: %s\n", err)
+	}
+	fmt.Println(projects)
 	return 1
 }
 func run(argv []string) error {
