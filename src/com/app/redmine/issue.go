@@ -303,8 +303,7 @@ func mapConcat(m map[string]string, delimiter string) string {
 }
 
 func getOneIssue(c *Client, id int, args map[string]string) (*Issue, error) {
-	url := c.endpoint + "/issues/" + strconv.Itoa(id) + ".json?"
-
+	url := c.endpoint + "/issues/" + strconv.Itoa(id) + ".json"
 	if args != nil {
 		url += "&" + mapConcat(args, "&")
 	}
@@ -338,7 +337,6 @@ func getOneIssue(c *Client, id int, args map[string]string) (*Issue, error) {
 
 func getIssue(c *Client, url string, offset int) (*issuesResult, error) {
 	res, err := c.Get(c.endpoint + url + "&offset=" + strconv.Itoa(offset))
-
 	if err != nil {
 		return nil, err
 	}
