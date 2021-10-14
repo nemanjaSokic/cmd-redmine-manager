@@ -46,7 +46,7 @@ func main() {
 		fmt.Printf("%s %s\n", name, version)
 		return
 	}
-	if flag.NArg() <= 1 {
+	if flag.NArg() < 1 {
 		usage()
 	}
 
@@ -54,9 +54,7 @@ func main() {
 
 	switch flag.Arg(0) {
 	case "t", "test":
-		fmt.Println("ssssss")
 		SelectProject()
-		break
 	case "i", "issue":
 		switch flag.Arg(1) {
 		case "a", "add":
